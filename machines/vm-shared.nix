@@ -4,7 +4,7 @@ let
   # Turn this to true to use gnome instead of i3. This is a bit
   # of a hack, I just flip it on as I need to develop gnome stuff
   # for now.
-  linuxGnome = true;
+  linuxGnome = false;
 in {
   # Be careful updating this.
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -82,9 +82,9 @@ in {
 
       # AARCH64: For now, on Apple Silicon, we must manually set the
       # display resolution. This is a known issue with VMware Fusion.
-      sessionCommands = ''
-        ${pkgs.xorg.xset}/bin/xset r rate 200 40
-      '';
+#      sessionCommands = ''
+#        ${pkgs.xorg.xset}/bin/xset r rate 200 40
+#      '';
     };
 
     windowManager = {
@@ -95,7 +95,7 @@ in {
   # Enable tailscale. We manually authenticate when we want with
   # "sudo tailscale up". If you don't use tailscale, you should comment
   # out or delete all of this.
-  services.tailscale.enable = true;
+  #services.tailscale.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.mutableUsers = false;
