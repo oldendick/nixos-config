@@ -64,11 +64,15 @@ in {
   services.xserver = if linuxGnome then {
     enable = true;
     layout = "us";
+    resolutions = [{ x = 2560; y = 1600; }];
+    virtualScreen = { x = 2560; y = 1600; };
     desktopManager.gnome.enable = true;
     displayManager.gdm.enable = true;
   } else {
     enable = true;
     layout = "us";
+    resolutions = [{ x = 2560; y = 1600; }];
+    virtualScreen = { x = 2560; y = 1600; };
     dpi = 220;
 
     desktopManager = {
